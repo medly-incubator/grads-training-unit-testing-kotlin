@@ -17,5 +17,10 @@ class PrimeFactorsCalculatorTest : StringSpec({
         primeFactorsCalculator.factorsOf(2) shouldBe expected
     }
 
+    "prime factors of 3 should be 3" {
+        val expected = listOf(3)
+        primeFactorsCalculator.factorsOf(3) shouldBe expected
+    }
+
 })
 
