@@ -1,18 +1,13 @@
 package com.example.unittesting
 
 class PrimeFactorsCalculator {
-    fun factorsOf(number: Int): List<Int> {
-        var output: MutableList<Int> = mutableListOf()
-        var input = number
-        var factor = 2
-        while(input > 1) {
-            while(input % factor == 0){
-                output.add(factor)
-                input = input / factor
-            }
-            factor++;
-        }
-        if(input > 1) output.add(input)
-        return output
+    fun factorsOf(number: Int) = primeFactorsStartingFrom(number, 2)
+
+    fun primeFactorsStartingFrom(input: Int, divisor: Int ) : List<Int> {
+        if(input == 1 )
+            return emptyList()
+        if(input % divisor == 0)
+            return listOf(divisor) + primeFactorsStartingFrom(input / divisor, divisor)
+        return primeFactorsStartingFrom(input, divisor + 1)
     }
 }
