@@ -1,9 +1,7 @@
 package com.example.unittesting
 
 import io.kotest.core.spec.style.StringSpec
-import io.kotest.matchers.should
 import io.kotest.matchers.shouldBe
-import io.kotest.matchers.string.startWith
 
 class PrimeFactorsCalculatorTest : StringSpec({
     val primeFactorsCalculator = PrimeFactorsCalculator()
@@ -20,6 +18,11 @@ class PrimeFactorsCalculatorTest : StringSpec({
     "prime factors of 3 should be 3" {
         val expected = listOf(3)
         primeFactorsCalculator.factorsOf(3) shouldBe expected
+    }
+
+    "prime factors of 4 should be 2,2" {
+        val expected = listOf(2,2)
+        primeFactorsCalculator.factorsOf(4) shouldBe expected
     }
 
 })
