@@ -28,5 +28,9 @@ class PrimeFactorsCalculatorTest : StringSpec({
     "prime factors of 8 should be 2,2,2" {
         primeFactorsCalculator.factorsOf(8) shouldBe listOf(2,2,2)
     }
+
+    "prime factors of 9 should be 3,3" {
+        primeFactorsCalculator.factorsOf(9) shouldBe listOf(3,3)
+    }
 })
 
